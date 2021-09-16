@@ -23,12 +23,16 @@ contract MyNFToken {
         _minters[msg.sender] = true;
     }
 
+    /// 0xddf252ad
     event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
 
+    /// 0x4b0bddd2
     function setAdmin(address addr, bool state) public {
         require(_admins[msg.sender] == true, "Not authorised");
         _admins[addr] = state;
     }
+
+    /// 0xcf456ae7
     function setMinter(address addr, bool state) public {
         require(_admins[msg.sender] == true, "Not authorised");
         _minters[addr] = state;
